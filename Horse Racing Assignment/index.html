@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+
+<body>
+    <section class="hero is-link">
+        <div class="hero-body">
+          <p class="title">
+            Horse Racing Assignment
+          </p>
+          <p class="subtitle">
+            APIs with Pre-Conditions and Post-Conditions
+          </p>
+        </div>
+      </section>
+    <section class="section">
+
+    <h1 class="title">Horse</h1>
+  <table class="table">
+    <tr>
+      <th>Method</th>
+      <th>Preconditions</th>
+      <th>Postconditions</th>
+    </tr>
+    <tr>
+      <td><code>Horse(String, int, int, int, double)</code></td>
+      <td>
+        <ul>
+          <li><code>name</code> is not null.</li>
+          <li><code>mudRating</code>, <code>grassRating</code>, <code>dirtRating</code> are valid ratings (non-negative).</li>
+          <li><code>preferredLength</code> is a valid length (non-negative).</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Initializes the <code>Horse</code> object with provided values.</li>
+          <li>Sets <code>currentPosition</code> to 2.</li>
+          <li>Sets <code>finishedRace</code> to false.</li>
+          <li>Sets <code>number</code> to 0.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>setNumber(int)</code></td>
+      <td><ul><li><code>number</code> is a valid positive integer.</li></ul></td>
+      <td>Sets the <code>number</code> field of the <code>Horse</code> object.</td>
+    </tr>
+    <tr>
+      <td><code>getNumber()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>number</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>setRaceFinished(boolean)</code></td>
+      <td>None</td>
+      <td>Sets the <code>finishedRace</code> field to the provided boolean value.</td>
+    </tr>
+    <tr>
+      <td><code>raceFinished()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>finishedRace</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>getName()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>name</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>getMudRating()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>mudRating</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>getGrassRating()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>grassRating</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>getDirtRating()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>dirtRating</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>getPreferredLength()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>preferredLength</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>incrementPosition(int)</code></td>
+      <td>None</td>
+      <td>Increments the <code>currentPosition</code> field by the provided increment.</td>
+    </tr>
+    <tr>
+      <td><code>getCurrentPosition()</code></td>
+      <td>None</td>
+      <td>Returns the value of the <code>currentPosition</code> field.</td>
+    </tr>
+    <tr>
+      <td><code>resetCurrenPosition()</code></td>
+      <td>None</td>
+      <td>Resets <code>currentPosition</code> to 2 and sets <code>finishedRace</code> to false.</td>
+    </tr>
+  </table>
+</section>
+
+<section class="section">
+
+    <h1 class="title">Race</h1>
+  <table class="table">
+    <tr>
+        <th>Method</th>
+        <th>Preconditions</th>
+        <th>Postconditions</th>
+      </tr>
+      <tr>
+        <td><code>Race(List&lt;Horse&gt;, double, String)</code></td>
+        <td>
+          <ul>
+            <li><code>horses</code> is not null and contains at least one horse.</li>
+            <li><code>raceLength</code> is a valid positive number (e.g., non-negative).</li>
+            <li><code>raceSurface</code> is one of "grass", "dirt", or "mud" (Uses HorseRacingHelper constants).</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Initializes the <code>Race</code> object with provided values.</li>
+            <li>Sets <code>currentHorse</code> to 0.</li>
+            <li>Initializes an empty <code>results</code> list.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>getHorses()</code></td>
+        <td>None</td>
+        <td>Returns the list of horses participating in the race.</td>
+      </tr>
+      <tr>
+        <td><code>numHorses()</code></td>
+        <td>None</td>
+        <td>Returns the number of horses participating in the race.</td>
+      </tr>
+      <tr>
+        <td><code>getNextHorse()</code></td>
+        <td>None</td>
+        <td>Returns the next horse in the race rotation.</td>
+      </tr>
+      <tr>
+        <td><code>getRaceLength()</code></td>
+        <td>None</td>
+        <td>Returns the length of the race in furlongs.</td>
+      </tr>
+      <tr>
+        <td><code>getRaceSurface()</code></td>
+        <td>None</td>
+        <td>Returns the surface type of the race ("grass", "dirt", or "mud").</td>
+      </tr>
+      <tr>
+        <td><code>displayRaceInfo()</code></td>
+        <td>None</td>
+        <td>Prints information about the race, including surface, length, and list of horses.</td>
+      </tr>
+      <tr>
+        <td><code>displayResults()</code></td>
+        <td>None</td>
+        <td>Prints the results of the race, including the order in which horses finished.</td>
+      </tr>
+      <tr>
+        <td><code>startRace()</code></td>
+        <td>None</td>
+        <td>Simulates the race, updating horse positions until all horses finish. Displays results and stops background music after the race.</td>
+      </tr>
+      <tr>
+        <td><code>resetHorses()</code></td>
+        <td>None</td>
+        <td>Resets the position of all participating horses and marks them as not finished.</td>
+      </tr>
+    </table>
+    </section>
+
+    <section class="section">
+
+        <h1 class="title">HorseRacingHelper</h1>
+      <table class="table">
+        <tr>
+            <th>Method</th>
+            <th>Static</th>
+            <th>Preconditions</th>
+            <th>Postconditions</th>
+          </tr>
+          <tr>
+            <td><code>pauseForMilliseconds(int)</code></td>
+            <td>Yes</td>
+            <td>
+              <ul>
+                <li><code>milliseconds</code> is a valid positive integer.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Pauses the execution of the program for the specified number of milliseconds.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>clearConsole()</code></td>
+            <td>Yes</td>
+            <td>None</td>
+            <td>Clears the console screen.</td>
+          </tr>
+          <tr>
+            <td><code>updateTrack(int, List&lt;Horse&gt;)</code></td>
+            <td>Yes</td>
+            <td>
+              <ul>
+                <li><code>numSpaces</code> is a valid positive integer.</li>
+                <li><code>horses</code> is not null.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Updates the track display with horse positions based on the number of spaces and list of horses.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>playBackgroundMusic(String, boolean)</code></td>
+            <td>Yes</td>
+            <td>
+              <ul>
+                <li><code>filename</code> is a valid non-empty string representing the music file path.</li>
+                <li><code>loop</code> is a valid boolean value.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Plays background music with the specified file name, optionally in a loop.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>playBackgroundMusicAndWait(String)</code></td>
+            <td>Yes</td>
+            <td>
+              <ul>
+                <li><code>filename</code> is a valid non-empty string representing the music file path.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Plays background music with the specified file name and waits for it to finish.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>stopMusic()</code></td>
+            <td>Yes</td>
+            <td>None</td>
+            <td>Stops the currently playing background music.</td>
+          </tr>
+        </table>
+        </section>
+
+        
+    <section class="section">
+
+        <h1 class="title">HorseRacing</h1>
+        <h2 class="subtitle">The Driver Class</h2>
+      <table class="table">
+        <tr>
+            <th>Method</th>
+            <th>Static</th>
+            <th>Preconditions</th>
+            <th>Postconditions</th>
+          </tr>
+          <tr>
+            <td><code>main(String[] args)</code></td>
+            <td>Yes</td>
+            <td>
+              <ul>
+                <li><code>args</code> is not null.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Entry point of the program.</li>
+                <li>Initializes and starts the horse racing simulation.</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        </section>
+
+</body>
+
+</html>
