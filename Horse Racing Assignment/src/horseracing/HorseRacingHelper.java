@@ -136,6 +136,18 @@ public class HorseRacingHelper {
         }
     }
 
+    public static int getLongestWidth(List<Horse> horses){
+        int i = 0;
+        for (Horse horse : horses) {
+            if (horse.getName().length() > i){
+                i = horse.getName().length();
+            }
+        }
+
+        return i;
+
+    }
+
     public static void pauseForMilliseconds(int milliseconds) {
         try {
             Thread.sleep(milliseconds);
