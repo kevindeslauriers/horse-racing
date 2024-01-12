@@ -70,8 +70,9 @@ public class Race {
         HorseRacingHelper.playBackgroundMusicAndWait("Race.wav");
         HorseRacingHelper.playBackgroundMusic("horse_gallop.wav", true);
 
+        
         while(!done){
-            HorseRacingHelper.pauseForMilliseconds(100);
+            HorseRacingHelper.pauseForMilliseconds(40);
             HorseRacingHelper.clearConsole();
             HorseRacingHelper.updateTrack(numSpaces, horses);
             Horse horse = getNextHorse();
@@ -81,7 +82,7 @@ public class Race {
                 results.add(horse);
                 horse.setRaceFinished(true);
             } else if(!horse.raceFinished()){
-                horse.incrementPosition((int)(Math.random() * 4));
+                horse.incrementPosition((int)(Math.random() * 9));
             }
 
             displayResults();

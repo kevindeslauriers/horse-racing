@@ -17,7 +17,7 @@ public class Horse{
             this.grassRating = grassRating;
             this.dirtRating = dirtRating;
             this.preferredLength = preferredLength;
-            this.currentPosition = 2;
+            this.currentPosition = 1;
             this.finishedRace = false;
             this.number = 0;
         }

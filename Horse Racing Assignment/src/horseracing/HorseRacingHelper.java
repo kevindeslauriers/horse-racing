@@ -159,12 +159,12 @@ public class HorseRacingHelper {
    
     public static void drawHorse(Horse horse, int width, int number){
         // Using printf to display the formatted string with the number
-        System.out.printf("|%"+horse.getCurrentPosition()+"s%" + ((width - horse.getCurrentPosition() - 1)>1?(width - horse.getCurrentPosition() - 1):1) + "s", horse.getNumber(),"|\n");
+        System.out.printf("|%"+((width - horse.getCurrentPosition())>1?(horse.getCurrentPosition()):width-1)+"s%" + ((width - horse.getCurrentPosition())>1?(width - horse.getCurrentPosition()):1) + "s\n", horse.getNumber(),"|");
     }
 
     public static void drawEmptyTrack(int width){
         // Using printf to display the formatted string with the number
-        System.out.printf("|%"+(width-1) + "s","|\n");
+        System.out.printf("|%"+(width+1) + "s","|\n");
     }
 
     public static void playBackgroundMusic(String filePath, boolean repeat) {
