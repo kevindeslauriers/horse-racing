@@ -26,6 +26,8 @@ public class HorseRacing {
     }
 
     private static boolean playAgain(Scanner in) {
+        System.out.print("\u001B[?25l");  // Hide the cursor
+
         System.out.print("Play Again: (y/n): ");
         String result = in.nextLine();
 
