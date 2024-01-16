@@ -28,6 +28,10 @@ public class Race {
         return horses.size();
     }
 
+    public Horse getCurrentHorse(){
+        return horses.get(currentHorse);
+    }
+
     public Horse getNextHorse(){
         if (currentHorse == horses.size())
             currentHorse = 0;
