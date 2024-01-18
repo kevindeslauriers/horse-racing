@@ -48,14 +48,29 @@ public class Race {
         return raceSurface;
     }
 
+    public void displayHorseTable(){
+        for (int i = 0; i < horses.size(); i++) {   // iterates through the horses list
+            Horse horse = horses.get(i);
+            String s1 = "" + horse.getName();
+            String s2 = "" + horse.getDirtRating();
+            String s3 = "" + horse.getGrassRating();
+            String s4 = "" + horse.getMudRating();
+
+            System.out.println("+--------------------+-----+-----+-----+");
+            System.out.printf("|%-20s|%5s|%5s|%5s|\n", s1, s2, s3, s4);
+        }
+        System.out.println("+--------------------+-----+-----+-----+");
+    }
+
     public void displayRaceInfo() {
         System.out.println("Race Information:");
         System.out.println("Race Surface: " + raceSurface);
         System.out.println("Race Length: " + raceLength + " furlongs");
         System.out.println("List of Horses:");
-        for (Horse horse : horses) {
-            System.out.println("- " + horse.getName());
-        }
+        // for (Horse horse : horses) {
+        //     System.out.println("- " + horse.getName());
+        // }
+        displayHorseTable();
     }
 
     public void displayResults(){
