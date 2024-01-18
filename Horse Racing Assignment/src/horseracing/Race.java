@@ -122,6 +122,10 @@ public class Race {
         // horse.getPreferredLength()
         // horse.getGrassRating()
 
+        int d = (int)(7 - Math.abs(horse.getPreferredLength() - this.raceLength));
+
+        // if (grass race)
+        //     d += horse.getGrassRating() / 2;
         // this.raceLength
         // this.raceSurface
        return (int)(Math.random() * 9);
