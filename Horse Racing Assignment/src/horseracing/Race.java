@@ -20,6 +20,7 @@ public class Race {
         this.results = new ArrayList<Horse>();
     }
 
+
     public List<Horse> getHorses() {
         return horses;
     }
@@ -86,7 +87,7 @@ public class Race {
                 results.add(horse);
                 horse.setRaceFinished(true);
             } else if(!horse.raceFinished()){
-                horse.incrementPosition((int)(Math.random() * 9));
+                horse.incrementPosition(getIncrementForHorse(horse));
             }
 
             displayResults();
@@ -98,6 +99,19 @@ public class Race {
         HorseRacingHelper.stopMusic();
     }
     // Other methods for simulating the race, calculating winners, etc., can be added as needed
+
+    private int getIncrementForHorse(Horse horse) {
+
+        // horse.getDirtRating()
+        // horse.getMudRating()
+        // horse.getPreferredLength()
+        // horse.getGrassRating()
+
+        // this.raceLength
+        // this.raceSurface
+       return (int)(Math.random() * 9);
+    }
+
 
     private void resetHorses() {
         for (Horse horse : horses) {
